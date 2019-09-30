@@ -1,0 +1,10 @@
+<label [for]='name' aria-label='search city'>
+<input [id]='name' [name]='name' type='search' [placeholder]="placeholder" [(ngModel)]='model' (focus)='openList($event)' (keyup)='keyUp.next($event)'>
+</label>
+<div class='list-container' *ngIf='citiesList && citiesList.length > 0'>
+  <ul role='list'>
+    <li *ngFor='let cities of citiesList' (click)='selectedItem($event, cities)'>
+     {{cities}}
+    </li>
+  </ul>
+</div>

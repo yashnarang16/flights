@@ -1,0 +1,34 @@
+<form #searchForm='ngForm' role="form" id="flight-search" aria-label="search a flight">
+<div class='form-input'>
+    <app-contextual-search [model]='search.origin' [form]='searchForm' [options]='citiesList' name='origin' placeholder='Enter Origin City'></app-contextual-search>
+  </div>
+  <div class='form-input'>
+    <app-contextual-search [model]='search.destination' [form]='searchForm' [options]='citiesList' name='destination' placeholder='Enter Destination City'></app-contextual-search>
+  </div>
+  <div class='form-input'>
+      <label for='departureDate' aria-label='departure date'> </label>
+    <input placeholder="Departure Date" name='departureDate' type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+      id="departureDate" [(ngModel)]='search.departureDate'>
+
+  </div>
+  <div class='form-input' *ngIf='return'>
+      <label for='returnDate' aria-label='return date'>    </label>
+    <input placeholder="Return Date" name='returnDate' type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+      id="returnDate" [(ngModel)]='search.returnDate'>
+
+  </div>
+  <div class='form-input'>
+      <label for='passenger' aria-label='number of passengers'>   </label>
+    <select name="passenger" id='passenger' [(ngModel)]='search.passangers'>
+      <option value="null" selected> Passenger </option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+  </div>
+  <div class='form-button'>
+    <button type='button' id='search_btn' (click)='submit()'> Search</button>
+  </div>
+</form>

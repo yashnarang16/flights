@@ -1,0 +1,24 @@
+<div class='tab-conatiner'>
+    <div class='tabs' role="tablist" aria-label="Sample Tabs">
+      <button role="tab" tabindex="0" aria-selected="true" aria-controls="tabpanel-id0" id='tabpanel-id0' class="tablinks active" (click)='tabChange($event, "oneway")'>One-Way</button>
+      <button role="tab" tabindex="-1" aria-selected="false" aria-controls="tabpanel-id1" id='tabpanel-id1' class="tablinks" (click)='tabChange($event, "return")'>Return</button>
+    </div>
+    <div id="oneway" class="tabcontent" *ngIf="currentTab === 'oneway'" role="tabpanel" tabindex="0" aria-labelledby="tabpanel-id0">
+     <app-search-form [refine]='refineModel' [return]='false'></app-search-form>
+    </div>
+    <div id="return" class="tabcontent" *ngIf="currentTab === 'return'" role="tabpanel" tabindex="0" aria-labelledby="tabpanel-id1">
+        <app-search-form [refine]='refineModel' [return]='true'></app-search-form>
+       </div>
+  </div>
+
+  <div class='card'>
+      <div class='card-heading'>Refine flight search</div>
+      <div class='form-input'>
+        <span>0</span>
+        <span class='range-label'>10000</span>
+        <label for='amount-slider'>
+        <input id='amount-slider' type="range" list="ticks" name="amount-slider" min="0" max="10000" step='500' role="slider" aria-labelledby="amount-slider" (change)='valueChange($event)'>
+        {{refineModel}}
+        </label>
+      </div>
+  </div>

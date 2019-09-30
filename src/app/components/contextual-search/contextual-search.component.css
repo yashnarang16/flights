@@ -1,0 +1,21 @@
+.list-container {
+  position: absolute;
+    background: white;
+    margin: 1px;
+    font-size: 13px;
+    width: 100px;
+    border: 1px solid #ccc;
+}
+
+.list-container > ul {
+  list-style: none;
+}
+
+.list-container > ul li {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+.list-container > ul li:hover {
+  background: #ccc;
+  cursor: pointer;
+}

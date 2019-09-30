@@ -1,0 +1,28 @@
+<div class='flight-card' *ngFor='let flight of flightList'>
+    <div class='f-card-left'>
+      <div class='amount'> RS. {{ flight.amount }}</div>
+      <div class='card-text-container'>
+        <div class='card-text'>
+          <div class='flight-number'> {{flight.flightNo}}</div>
+          <div class='other-details'> {{flight.originCode}} > {{flight.destCode}}</div>
+          <div class='other-details'>Depart: {{flight.time.depart.split(' ')[1]}} AM</div>
+          <div class='other-details'>Arrive:  {{flight.time.arrive.split(' ')[1]}} PM </div>
+        </div>
+        <div class='card-text' *ngIf='roundTrip'>
+          <div class='flight-number'> {{flight.flightNo}}</div>
+          <div class='other-details'> {{flight.destCode}} > {{flight.originCode}}</div>
+          <div class='other-details'>Depart: {{flight.returnTime.depart.split(' ')[1]}} AM</div>
+          <div class='other-details'>Arrive:  {{flight.returnTime.arrive.split(' ')[1]}} PM </div>
+        </div>
+      </div>
+    </div>
+    <div class='f-card-right'>
+      <div class='img-container'>
+          <img src='./../assets/68395.svg' alt='flight icon'>
+        <div class='form-button'>
+          <button type='button' class='book-btn'>book this flight</button>
+        </div>
+      </div>
+
+    </div>
+  </div>

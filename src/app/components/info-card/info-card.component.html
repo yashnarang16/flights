@@ -1,0 +1,14 @@
+<div class='card-info' >
+    <div class='card-left'>
+      <span>{{ flightList.origin }}</span>
+      <span> &gt; {{ flightList.destination }}</span>
+      <span *ngIf='roundTrip'> &gt; {{ flightList.origin }}</span>
+    </div>
+    <div class='card-right-con'>
+      <div> Depature Date: {{ flightList.date.split(' ')[0]}}
+      </div>
+      <div *ngIf='roundTrip'>
+        Return Date: {{ flightList.return.split(' ')[0]}}
+      </div>
+    </div>
+</div>

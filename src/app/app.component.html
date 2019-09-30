@@ -1,0 +1,27 @@
+<div class='menu-container' role='form'>
+  <div class='menu'>
+    <h1 class='app-name'>Flight Search Engine
+    </h1>
+  </div>
+</div>
+<div class='site-wrapper' role="main">
+  <div class='flex-30'>
+
+    <!-- tab started -->
+    <app-tab></app-tab>
+
+    <!-- tab ended -->
+
+  </div>
+  <div class='flex-70'>
+    <span role="alert" *ngIf='flightList.length === 0'> Please search or refine your search</span>
+    <div class='wrapper' *ngIf='flightList && flightList.length > 0'>
+     <app-info-card [roundTrip]='roundTrip' [flightList]='flightList[0]'></app-info-card>
+      <div class='flight-card-container'>
+       <app-flight-list [roundTrip]='roundTrip' [flightList]='flightList'></app-flight-list>
+      </div>
+    </div>
+
+</div>
+</div>
+
